@@ -1,0 +1,39 @@
+.new-forum {
+  max-width: 600px;
+  margin: auto;
+}
+.new-forum h1 {
+  font-size: 1.5em;
+}
+.new-forum form div {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+}
+
+.new-forum form div input,
+.new-forum form div textarea {
+  font-size: 1.1em;
+  padding: 5px;
+}
+
+.new-forum form div textarea {
+  resize: none;
+  height: 100px;
+}
+
+.new-forum form button {
+  background-color: #1ba120;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  color: white;
+  padding: 5px 5px;
+  transition: color 0.3s ease;
+  margin-top: 10px;
+}
+
+.new-forum form button:hover {
+  color: #6f6f6f;
+  background: rgb(225, 225, 225);
+}

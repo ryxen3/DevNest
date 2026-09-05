@@ -1,0 +1,8 @@
+{
+  "name": "git-forums",
+  "private": true,
+  "scripts": {
+    "dev": "dev.cmd",
+    "build": "build.cmd"
+  }
+}

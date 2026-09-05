@@ -1,0 +1,14 @@
+.history {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.2em;
+}
+.history > div > div {
+  margin-top: 10px;
+}
+.history a {
+  color: rgb(69, 69, 69);
+}
+.history a:hover {
+  color: black;
+}
