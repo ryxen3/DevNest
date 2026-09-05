@@ -23,7 +23,7 @@ const ForumEdit = () => {
           title,
           description,
           user_id: user.id,
-        }
+        },
       );
 
       console.log("New forum created:", data);
@@ -36,7 +36,7 @@ const ForumEdit = () => {
   const fetchForum = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3000/posts/${params.id}`
+        `http://localhost:3000/posts/${params.id}`,
       );
 
       console.log("Forum data:", data);

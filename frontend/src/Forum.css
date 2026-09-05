@@ -1,2 +1,116 @@
-.forum-container { max-width:920px; margin:0 auto; padding:42px 20px 64px; }.forum-container>h2{text-transform:uppercase;letter-spacing:2px;color:#7166a0;font-size:.8rem;margin:0 0 12px}.forum-card{background:#fff;border:1px solid #ebeaf7;border-radius:18px;overflow:hidden;box-shadow:0 14px 32px #29205012}.forum-container .forum-card>h2{margin:0;padding:24px 26px 0;font-size:1.85rem;letter-spacing:-.6px}.forum-container .forum-card .forum-card-body{border:0;padding:15px 26px 26px}.forum-card-header,.comment-card-header{display:flex;gap:7px;color:#777b92;font-size:.88rem}.forum-container .forum-card .forum-card-body>p{line-height:1.7;font-size:1.05rem}.forum-upvotes{margin-top:16px;border:0!important;border-radius:11px!important;padding:9px 13px!important;background:#f1efff!important;color:#6850d9!important;font-weight:800;display:inline-flex;gap:7px;align-items:center}.forum-upvotes.is-upvoted{background:#ffeadb!important;color:#e5631f!important}.comment-card{margin:14px 0;border:1px solid #e9eaf5!important;border-radius:14px;background:#fff!important;box-shadow:0 6px 18px #29205009}.forum-container .comment-card .comment-card-body{padding:18px 20px}.forum-container .comment-card .comment-card-body>p{line-height:1.55}.forum-container button:not(.forum-upvotes){border:0;border-radius:8px;background:#eeeaff;color:#5945bc;padding:7px 10px;font-weight:700}.forum-container button:hover{filter:brightness(.96)}.comment-card-edit textarea{border:1px solid #cbc7ed;border-radius:8px;padding:10px}@media(max-width:580px){.forum-container{padding:28px 14px}.forum-container .forum-card>h2{font-size:1.45rem;padding:20px 18px 0}.forum-container .forum-card .forum-card-body{padding:12px 18px 20px}.comment-card-header{flex-direction:column}}
-.forum-upvotes{pointer-events:auto!important;position:relative;z-index:2;min-height:42px}.forum-upvotes:disabled{opacity:.65;cursor:wait}.vote-error{margin:10px 0 0;color:#b3264e;font-size:.9rem;font-weight:600}
+.forum-container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 42px 20px 64px;
+}
+.forum-container > h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #7166a0;
+  font-size: 0.8rem;
+  margin: 0 0 12px;
+}
+.forum-card {
+  background: #fff;
+  border: 1px solid #ebeaf7;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px #29205012;
+}
+.forum-container .forum-card > h2 {
+  margin: 0;
+  padding: 24px 26px 0;
+  font-size: 1.85rem;
+  letter-spacing: -0.6px;
+}
+.forum-container .forum-card .forum-card-body {
+  border: 0;
+  padding: 15px 26px 26px;
+}
+.forum-card-header,
+.comment-card-header {
+  display: flex;
+  gap: 7px;
+  color: #777b92;
+  font-size: 0.88rem;
+}
+.forum-container .forum-card .forum-card-body > p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+.forum-upvotes {
+  margin-top: 16px;
+  border: 0 !important;
+  border-radius: 11px !important;
+  padding: 9px 13px !important;
+  background: #f1efff !important;
+  color: #6850d9 !important;
+  font-weight: 800;
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+}
+.forum-upvotes.is-upvoted {
+  background: #ffeadb !important;
+  color: #e5631f !important;
+}
+.comment-card {
+  margin: 14px 0;
+  border: 1px solid #e9eaf5 !important;
+  border-radius: 14px;
+  background: #fff !important;
+  box-shadow: 0 6px 18px #29205009;
+}
+.forum-container .comment-card .comment-card-body {
+  padding: 18px 20px;
+}
+.forum-container .comment-card .comment-card-body > p {
+  line-height: 1.55;
+}
+.forum-container button:not(.forum-upvotes) {
+  border: 0;
+  border-radius: 8px;
+  background: #eeeaff;
+  color: #5945bc;
+  padding: 7px 10px;
+  font-weight: 700;
+}
+.forum-container button:hover {
+  filter: brightness(0.96);
+}
+.comment-card-edit textarea {
+  border: 1px solid #cbc7ed;
+  border-radius: 8px;
+  padding: 10px;
+}
+@media (max-width: 580px) {
+  .forum-container {
+    padding: 28px 14px;
+  }
+  .forum-container .forum-card > h2 {
+    font-size: 1.45rem;
+    padding: 20px 18px 0;
+  }
+  .forum-container .forum-card .forum-card-body {
+    padding: 12px 18px 20px;
+  }
+  .comment-card-header {
+    flex-direction: column;
+  }
+}
+.forum-upvotes {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 2;
+  min-height: 42px;
+}
+.forum-upvotes:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.vote-error {
+  margin: 10px 0 0;
+  color: #b3264e;
+  font-size: 0.9rem;
+  font-weight: 600;
+}

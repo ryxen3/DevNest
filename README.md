@@ -1,50 +1,46 @@
 # DevNest
 
-DevNest is a full-stack developer community platform built for the Agentic Software Engineer Intern assignment.
+DevNest is a full-stack developer community platform built for the Agentic Software Engineer Intern assignment. Developers can publish ranked posts, discuss them through threaded replies, react with likes/dislikes, and maintain public profiles.
 
 ## Stack
 
-- Frontend: React, TypeScript, Vite
-- Backend: Express, TypeScript
-- Database: PGlite, a local PostgreSQL-compatible database used through Drizzle ORM
+- React + TypeScript + Vite
+- Express + TypeScript
+- Drizzle ORM + PGlite (local PostgreSQL-compatible database)
+- JWT bearer-token authentication
 
-## Run locally
+## Run
 
 ```powershell
 npm run dev
 ```
 
-The API runs at `http://localhost:3000`, frontend at `http://localhost:5173`, and Swagger docs at `http://localhost:3000/api/docs`.
+- Web: `http://localhost:5173` (Vite may use a nearby port if occupied)
+- API: `http://localhost:3000`
+- Swagger: `http://localhost:3000/api/docs`
 
-The embedded database is created automatically at `backend/.data-devnest`; no remote database setup is needed.
+No database service is required. Data persists locally in the directory configured by
+`PGLITE_DATA_DIR` (the supplied local setup uses `backend/.devnest-data-v2`).
 
 ## Environment variables
 
-- `PORT` - API port, default `3000`
-- `CLIENT_URL` - frontend origin, default `http://localhost:5173`
-- `JWT_SECRET` - token signing secret (use a long random value outside local development)
-- `PGLITE_DATA_DIR` - local database storage folder
+`PORT`, `CLIENT_URL`, `JWT_SECRET`, `PGLITE_DATA_DIR`.
 
 ## Ranking
 
-Posts are ordered by:
+`score = likes - dislikes + (comment_count * 2)`. Higher score ranks first; tied scores use newest post first.
 
-`score = likes - dislikes + (comment_count * 2)`
+## Verification
 
-Ties are broken by newest post first.
+```powershell
+cd backend
+npm test
+```
 
-## Features
+The focused tests verify the required ranking formula. The app is also checked with a TypeScript backend compile and a production Vite build.
 
-- JWT register/login and protected write APIs
-- Developer profiles with skills and experiences
-- Post creation, ranked feed, detail pages
-- Threaded comment replies
-- Like/dislike reactions on posts and comments
-- Swagger/OpenAPI endpoint
-- Shared `{ success, data }` and structured error responses
+## Current scope and limitations
 
-## Known limitations
+Core auth, profiles, posts, threaded replies, likes/dislikes, ranking, Swagger, and responsive UI are implemented. Refresh tokens, post pagination/search, moderation, and production deployment hardening are intentionally outside this assignment scope.
 
-This is a local interview assignment build. PGlite data is stored per local checkout, refresh tokens and pagination/search are not implemented, and tests should be expanded before production deployment.
-
-See [AI_USAGE.md](AI_USAGE.md).
+See [AI_USAGE.md](AI_USAGE.md) for the AI workflow review notes.

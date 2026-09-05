@@ -43,7 +43,7 @@ const Forum = () => {
     try {
       await axios.delete(`http://localhost:3000/comments/${id}`);
       setComments((prevComments) =>
-        prevComments.filter((comment) => comment.id !== id)
+        prevComments.filter((comment) => comment.id !== id),
       );
     } catch (error) {
       console.error("Error deleting comment:", error);
@@ -71,8 +71,8 @@ const Forum = () => {
         prev.map((comment) =>
           comment.id === editingCommentId
             ? { ...comment, content: editedContent }
-            : comment
-        )
+            : comment,
+        ),
       );
 
       setEditingCommentId(null);
@@ -88,13 +88,24 @@ const Forum = () => {
     setVoteError("");
     try {
       const response = hasUpvoted
-        ? await axios.delete("http://localhost:3000/upvote", { data: { post_id: postId, user_id: user.id } })
-        : await axios.post("http://localhost:3000/upvote", { post_id: postId, user_id: user.id });
-      setForum((current) => current ? { ...current, upvotesCount: Number(response.data.upvotesCount) } : current);
+        ? await axios.delete("http://localhost:3000/upvote", {
+            data: { post_id: postId, user_id: user.id },
+          })
+        : await axios.post("http://localhost:3000/upvote", {
+            post_id: postId,
+            user_id: user.id,
+          });
+      setForum((current) =>
+        current
+          ? { ...current, upvotesCount: Number(response.data.upvotesCount) }
+          : current,
+      );
       setHasUpvoted(Boolean(response.data.hasUpvoted));
     } catch (error) {
       console.error("Upvote toggle failed:", error);
-      setVoteError("Could not save your upvote. Please make sure the API is running.");
+      setVoteError(
+        "Could not save your upvote. Please make sure the API is running.",
+      );
     } finally {
       setIsVoting(false);
     }
@@ -102,7 +113,7 @@ const Forum = () => {
   const fetchForum = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3000/posts/${params.id}?user_id=${user.id}`
+        `http://localhost:3000/posts/${params.id}?user_id=${user.id}`,
       );
 
       console.log("Forum data:", data);
@@ -142,9 +153,17 @@ const Forum = () => {
                 </p>
               </div>
               <p>{forum.description}</p>
-              <button type="button" aria-pressed={hasUpvoted} disabled={isVoting} onClick={() => handleUpvote(forum.id)} className={`forum-upvotes ${hasUpvoted ? "is-upvoted" : ""}`}>
+              <button
+                type="button"
+                aria-pressed={hasUpvoted}
+                disabled={isVoting}
+                onClick={() => handleUpvote(forum.id)}
+                className={`forum-upvotes ${hasUpvoted ? "is-upvoted" : ""}`}
+              >
                 <FaArrowUp color={hasUpvoted ? "orange" : "gray"} />{" "}
-                {isVoting ? "Saving..." : `${forum.upvotesCount} ${hasUpvoted ? "Upvoted" : "Upvote"}`}
+                {isVoting
+                  ? "Saving..."
+                  : `${forum.upvotesCount} ${hasUpvoted ? "Upvoted" : "Upvote"}`}
               </button>
               {voteError && <p className="vote-error">{voteError}</p>}
             </div>
@@ -176,7 +195,7 @@ const Forum = () => {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
-                        }
+                        },
                       )}
                     </p>
                   </div>
@@ -203,11 +222,3 @@ const Forum = () => {
 };
 
 export default Forum;
-
-
-
-
-
-
-
-

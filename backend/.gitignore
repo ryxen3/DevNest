@@ -1,4 +1,6 @@
 node_modules/
 dist/
 .data/
+.devnest-data/
+.devnest-data-v2/
 .env

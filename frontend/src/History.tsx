@@ -12,7 +12,7 @@ const History = () => {
     async function fetchHistory() {
       try {
         const { data } = await axios.get(
-          `http://localhost:3000/auth/history?user_id=${user.id}`
+          `http://localhost:3000/auth/history?user_id=${user.id}`,
         );
 
         console.log("history: ", data.history);

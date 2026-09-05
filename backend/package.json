@@ -6,7 +6,8 @@
     "dev": "concurrently \"tsc --watch\" \"nodemon dist/index.js\"",
     "start": "node dist/index.js",
     "build": "tsc",
-    "migrate": "drizzle-kit push"
+    "migrate": "drizzle-kit push",
+    "test": "node --test test/*.test.js"
   },
   "keywords": [],
   "author": "",

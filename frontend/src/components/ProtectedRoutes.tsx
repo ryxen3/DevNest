@@ -7,7 +7,7 @@ const ProtectedRoutes: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const navigate = useNavigate();
   const isAuthenticated = useSelector(
-    (state: any) => state.auth.isAuthenticated
+    (state: any) => state.auth.isAuthenticated,
   );
 
   useEffect(() => {

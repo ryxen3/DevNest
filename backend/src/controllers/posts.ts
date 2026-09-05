@@ -89,9 +89,7 @@ export const deletePost = async (req: Request, res: Response) => {
     const { id } = req.params;
     await db.delete(posts).where(eq(posts.id, parseInt(String(id), 10)));
 
-    res
-      .status(200)
-      .json({ message: "Post deleted successfully!" });
+    res.status(200).json({ message: "Post deleted successfully!" });
   } catch (error) {
     console.error("Error deleting post:", error);
     res.status(500).json({ message: "Internal server error" });
@@ -144,8 +142,8 @@ export const getPost = async (req: Request, res: Response) => {
         .where(
           and(
             eq(upvotes.post_id, parseInt(String(id), 10)),
-            eq(upvotes.user_id, parseInt(userId))
-          )
+            eq(upvotes.user_id, parseInt(userId)),
+          ),
         );
 
       hasUpvoted = existingUpvote.length > 0;
@@ -164,5 +162,3 @@ export const getPost = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
-
