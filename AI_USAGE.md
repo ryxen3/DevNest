@@ -118,5 +118,3 @@ DevNest is designed as a readable assignment project, not as a complete producti
 - focused unit tests rather than a comprehensive HTTP integration suite;
 - a local PGlite data store instead of hosted deployment infrastructure;
 - simple browser prompts for some reply/comment editing interactions, which could later become inline forms or modals.
-
-For an interview, I would explain these trade-offs directly: I prioritised correct authorization, the required data relationships, a runnable local setup, and a clean demonstrable user flow before adding larger platform features.
